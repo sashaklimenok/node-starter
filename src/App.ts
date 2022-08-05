@@ -4,18 +4,20 @@ import { Server } from 'http';
 import { injectKeys } from './types/injectKeys';
 import { ILoggerService } from './services';
 import { IChalkService } from './services/Chalk';
+import { IConfigService } from './services/Config';
 
 @injectable()
 export class App {
 	app: Express;
 	server: Server;
-	port: number;
+	port: string;
 	constructor(
 		@inject(injectKeys.ILoggerService) private logger: ILoggerService,
 		@inject(injectKeys.IChalkService) private chalk: IChalkService,
+		@inject(injectKeys.IConfigService) private config: IConfigService,
 	) {
 		this.app = express();
-		this.port = 8000;
+		this.port = this.config.get('PORT');
 	}
 
 	init(): void {
