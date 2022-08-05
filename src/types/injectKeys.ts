@@ -1,4 +1,7 @@
 export const injectKeys = {
 	Application: Symbol.for('Application'),
-	ILogger: Symbol.for('ILogger'),
+	ILoggerService: Symbol.for('ILoggerService'),
+	IConfigService: Symbol.for('IConfigService'),
+	IChalkService: Symbol.for('IChalkService'),
+	IPrismaService: Symbol.for('IPrismaService'),
 };
