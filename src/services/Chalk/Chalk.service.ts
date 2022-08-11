@@ -4,7 +4,7 @@ import { IChalkService } from './chalk.service.interface';
 
 @injectable()
 export class ChalkService implements IChalkService {
-	chalk: typeof chalk;
+	private chalk: typeof chalk;
 
 	constructor() {
 		this.chalk = chalk;

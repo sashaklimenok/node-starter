@@ -7,7 +7,7 @@ import { IPrismaService } from './prisma.service.interface';
 
 @injectable()
 export class PrismaService implements IPrismaService {
-	client: PrismaClient;
+	private client: PrismaClient;
 	constructor(
 		@inject(injectKeys.ILoggerService) private loggerService: ILoggerService,
 		@inject(injectKeys.IChalkService) private chalkService: IChalkService,
