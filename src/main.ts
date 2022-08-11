@@ -11,7 +11,7 @@ import {
 	IPrismaService,
 	PrismaService,
 } from './services';
-import { injectKeys } from './types/injectKeys';
+import { injectKeys } from './constants/injectKeys';
 
 //Composition root
 export const appBindings = new ContainerModule((bind: interfaces.Bind) => {

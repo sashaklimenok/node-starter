@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { inject, injectable } from 'inversify';
-import { injectKeys } from '../../types/injectKeys';
+import { injectKeys } from '../../constants/injectKeys';
 import { IChalkService } from '../chalk';
 import { ILoggerService } from '../logger';
 import { IPrismaService } from './prisma.service.interface';

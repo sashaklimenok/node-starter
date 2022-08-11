@@ -1,6 +1,6 @@
 import { config, DotenvConfigOutput, DotenvParseOutput } from 'dotenv';
 import { inject, injectable } from 'inversify';
-import { injectKeys } from '../../types/injectKeys';
+import { injectKeys } from '../../constants/injectKeys';
 import { ILoggerService } from '../logger';
 import { IConfigService } from './config.service.interface';
 import { IChalkService } from '../chalk';
