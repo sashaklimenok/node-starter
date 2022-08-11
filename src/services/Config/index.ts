@@ -1,2 +1,2 @@
-export * from './Config.service';
-export * from './Config.service.interface';
+export * from './config.service';
+export * from './config.service.interface';

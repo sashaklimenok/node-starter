@@ -1,9 +1,9 @@
 import { config, DotenvConfigOutput, DotenvParseOutput } from 'dotenv';
 import { inject, injectable } from 'inversify';
 import { injectKeys } from '../../types/injectKeys';
-import { ILoggerService } from '../Logger';
-import { IConfigService } from './Config.service.interface';
-import { IChalkService } from '../Chalk';
+import { ILoggerService } from '../logger';
+import { IConfigService } from './config.service.interface';
+import { IChalkService } from '../chalk';
 import { resolve, join } from 'path';
 
 @injectable()

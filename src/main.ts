@@ -1,11 +1,17 @@
 import 'reflect-metadata';
 import { Container, ContainerModule, interfaces } from 'inversify';
-import { App } from './App';
-import { ILoggerService, LoggerService } from './services';
+import { App } from './app';
+import {
+	ILoggerService,
+	LoggerService,
+	ConfigService,
+	IConfigService,
+	ChalkService,
+	IChalkService,
+	IPrismaService,
+	PrismaService,
+} from './services';
 import { injectKeys } from './types/injectKeys';
-import { ConfigService, IConfigService } from './services/Config';
-import { ChalkService, IChalkService } from './services/Chalk';
-import { IPrismaService, PrismaService } from './services/Prisma';
 
 //Composition root
 export const appBindings = new ContainerModule((bind: interfaces.Bind) => {

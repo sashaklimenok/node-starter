@@ -1,2 +1,2 @@
-export * from './Chalk.service';
-export * from './Chalk.service.interface';
+export * from './chalk.service';
+export * from './chalk.service.interface';

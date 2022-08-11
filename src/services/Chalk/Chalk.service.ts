@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import { injectable } from 'inversify';
-import { IChalkService } from './Chalk.service.interface';
+import { IChalkService } from './chalk.service.interface';
 
 @injectable()
 export class ChalkService implements IChalkService {
