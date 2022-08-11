@@ -1,7 +1,7 @@
 import { inject, injectable } from 'inversify';
 import express, { Express } from 'express';
 import { Server } from 'http';
-import { injectKeys } from './constants/injectKeys';
+import { injectKeys } from './constants';
 import { ILoggerService, IChalkService, IConfigService } from './services';
 
 @injectable()
