@@ -4,6 +4,7 @@
 	"description": "---REMINDER telegram bot course REMINDER--- DO-NOT-FORGET-UPDATE-VERSION-dependencies @latest",
 	"main": "./src/main.js",
 	"scripts": {
+		"docker:compose": "docker compose up -d",
 		"dev": "nodemon",
 		"start": "node ./build/main.js",
 		"build": "tsc",
@@ -11,6 +12,7 @@
 		"lint": "eslint ./src/**",
 		"lint:fix": "eslint ./src/** --fix",
 		"prisma": "prisma",
+		
 		"prisma:init": "prisma init",
 		"generate": "prisma generate",
 		"migrate": "prisma migrate dev",

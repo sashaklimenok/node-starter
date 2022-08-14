@@ -4,7 +4,6 @@ import { injectKeys } from '../../constants';
 import { ILoggerService } from '../logger';
 import { IConfigService } from './config.service.interface';
 import { IChalkService } from '../chalk';
-import { resolve, join } from 'path';
 
 @injectable()
 export class ConfigService implements IConfigService {
@@ -13,9 +12,7 @@ export class ConfigService implements IConfigService {
 		@inject(injectKeys.ILoggerService) private loggerService: ILoggerService,
 		@inject(injectKeys.IChalkService) private chalkService: IChalkService,
 	) {
-		const result: DotenvConfigOutput = config({
-			path: join(resolve(), '/env/.env'),
-		});
+		const result: DotenvConfigOutput = config();
 		if (result.error) {
 			this.loggerService.error(
 				`${this.chalkService.highlight('[ConfigService]')} Can not read .env`,
