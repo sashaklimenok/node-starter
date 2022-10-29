@@ -24,7 +24,16 @@ export class UserController extends Controller implements IUserController {
         callback: this.register,
         method: 'post',
       },
+      {
+        path: ROUTES.user.logout,
+        callback: this.logout,
+        method: 'get',
+      },
     ]);
+  }
+
+  activateLink(request: Request, response: Response, next: NextFunction): void {
+    console.log(request.body);
   }
 
   register(request: Request, response: Response, next: NextFunction): void {
@@ -32,6 +41,10 @@ export class UserController extends Controller implements IUserController {
   }
 
   login(request: Request, response: Response, next: NextFunction): void {
+    console.log(request.body);
+  }
+
+  logout(request: Request, response: Response, next: NextFunction): void {
     console.log(request.body);
   }
 }

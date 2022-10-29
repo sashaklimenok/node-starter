@@ -5,4 +5,5 @@ export interface IUserController {
   router: Router;
   login: ExpressHandler;
   register: ExpressHandler;
+  logout: ExpressHandler;
 }

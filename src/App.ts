@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import { IExceptionFilter } from 'errors';
 import cors from 'cors';
 import { IUserController } from 'controllers/user';
+import { IUsersController } from 'controllers/users';
 
 @injectable()
 export class App {
@@ -20,6 +21,7 @@ export class App {
     @inject(injectKeys.IPrismaService) private prisma: IPrismaService,
     @inject(injectKeys.IExceptionFilter) private exceptionFilter: IExceptionFilter,
     @inject(injectKeys.IUserController) private userController: IUserController,
+    @inject(injectKeys.IUsersController) private usersController: IUsersController,
   ) {
     this.app = express();
     this.port = this.config.get('PORT');
@@ -34,6 +36,7 @@ export class App {
 
   useRoutes(): void {
     this.app.use(ROUTES.user.base, this.userController.router);
+    this.app.use(this.usersController.router);
   }
 
   startServer(): void {

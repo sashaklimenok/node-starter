@@ -14,6 +14,7 @@ import {
 import { injectKeys } from './app-constants';
 import { ExceptionFilter, IExceptionFilter } from 'errors';
 import { IUserController, UserController } from 'controllers/user';
+import { IUsersController, UsersController } from 'controllers/users';
 
 //Composition root
 export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
@@ -24,6 +25,7 @@ export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
   bind<IPrismaService>(injectKeys.IPrismaService).to(PrismaService).inSingletonScope();
   bind<IExceptionFilter>(injectKeys.IExceptionFilter).to(ExceptionFilter).inSingletonScope();
   bind<IUserController>(injectKeys.IUserController).to(UserController).inSingletonScope();
+  bind<IUsersController>(injectKeys.IUsersController).to(UsersController).inSingletonScope();
 });
 
 const bootstrap = (): Record<string, unknown> => {
