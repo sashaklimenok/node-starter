@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { inject, injectable } from 'inversify';
-import { injectKeys } from '../constants';
+import { injectKeys } from 'app-constants';
 import { IChalkService, ILoggerService } from '../services';
 import { IExceptionFilter } from './exception.filter.interface';
 import { HTTPError } from './http-errors';

@@ -1,9 +1,12 @@
 import { inject, injectable } from 'inversify';
 import express, { Express, json } from 'express';
 import { Server } from 'http';
-import { injectKeys } from './constants';
+import { injectKeys, ROUTES } from './app-constants';
 import { ILoggerService, IChalkService, IConfigService, IPrismaService } from './services';
 import cookieParser from 'cookie-parser';
+import { IExceptionFilter } from 'errors';
+import cors from 'cors';
+import { IUserController } from 'controllers/user';
 
 @injectable()
 export class App {
@@ -15,6 +18,8 @@ export class App {
     @inject(injectKeys.IChalkService) private chalk: IChalkService,
     @inject(injectKeys.IConfigService) private config: IConfigService,
     @inject(injectKeys.IPrismaService) private prisma: IPrismaService,
+    @inject(injectKeys.IExceptionFilter) private exceptionFilter: IExceptionFilter,
+    @inject(injectKeys.IUserController) private userController: IUserController,
   ) {
     this.app = express();
     this.port = this.config.get('PORT');
@@ -22,7 +27,13 @@ export class App {
 
   useMiddleWare(): void {
     this.app.use(json());
+    this.app.use(cors());
     this.app.use(cookieParser());
+    this.app.use(this.exceptionFilter.catch);
+  }
+
+  useRoutes(): void {
+    this.app.use(ROUTES.user.base, this.userController.router);
   }
 
   startServer(): void {
@@ -40,6 +51,7 @@ export class App {
   async init(): Promise<void> {
     await this.prisma.connect();
     this.useMiddleWare();
+    this.useRoutes();
 
     this.startServer();
   }

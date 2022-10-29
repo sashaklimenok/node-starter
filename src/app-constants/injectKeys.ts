@@ -5,4 +5,5 @@ export const injectKeys = {
   IChalkService: Symbol.for('IChalkService'),
   IPrismaService: Symbol.for('IPrismaService'),
   IExceptionFilter: Symbol.for('IExceptionFilter'),
+  IUserController: Symbol.for('IUserController'),
 };
