@@ -1,4 +1,4 @@
 export interface IPrismaService {
-	connect(): Promise<void>;
-	disconnect(): Promise<void>;
+  connect(): Promise<void>;
+  disconnect(): Promise<void>;
 }

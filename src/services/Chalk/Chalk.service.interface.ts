@@ -1,3 +1,3 @@
 export interface IChalkService {
-	highlight(value: string): string;
+  highlight(value: string): string;
 }

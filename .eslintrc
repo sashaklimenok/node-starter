@@ -17,8 +17,7 @@
 			"error",
 			{
 				"singleQuote": true,
-				"tabWidth": 2,
-				"useTabs": true,
+				"useTabs": false,
 				"semi": true,
 				"trailingComma": "all",
 				"bracketSpacing": true,
