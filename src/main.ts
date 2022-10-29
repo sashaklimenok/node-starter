@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { Container, ContainerModule, interfaces } from 'inversify';
-import { App } from './app';
+import { App } from './App';
 import {
   ILoggerService,
   LoggerService,
@@ -12,6 +12,7 @@ import {
   PrismaService,
 } from 'services';
 import { injectKeys } from './constants';
+import { ExceptionFilter, IExceptionFilter } from 'errors';
 
 //Composition root
 export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
@@ -20,6 +21,7 @@ export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
   bind<IConfigService>(injectKeys.IConfigService).to(ConfigService).inSingletonScope();
   bind<IChalkService>(injectKeys.IChalkService).to(ChalkService).inSingletonScope();
   bind<IPrismaService>(injectKeys.IPrismaService).to(PrismaService).inSingletonScope();
+  bind<IExceptionFilter>(injectKeys.IExceptionFilter).to(ExceptionFilter).inSingletonScope();
 });
 
 const bootstrap = (): Record<string, unknown> => {
