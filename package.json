@@ -1,5 +1,5 @@
 {
-	"name": "node starter",
+	"name": "node-starter",
 	"version": "1.0.0",
 	"description": "---REMINDER telegram bot course REMINDER--- DO-NOT-FORGET-UPDATE-VERSION-dependencies @latest",
 	"main": "./src/main.js",
@@ -12,7 +12,6 @@
 		"lint": "eslint ./src/**",
 		"lint:fix": "eslint ./src/** --fix",
 		"prisma": "prisma",
-		
 		"prisma:init": "prisma init",
 		"generate": "prisma generate",
 		"migrate": "prisma migrate dev",
@@ -47,6 +46,7 @@
 	"dependencies": {
 		"@prisma/client": "^4.1.1",
 		"chalk": "^4.1.2",
+		"cookie-parser": "^1.4.6",
 		"dotenv": "^16.0.1",
 		"express": "^4.18.1",
 		"inversify": "^6.0.1",
